@@ -71,4 +71,18 @@ public class Tic_toc_tieGame {
 		}
 		showBoard(board);
 	}
+
+	boolean freeSpace = false;
+	{
+		for (int index = 0; index < board.length; index++) {
+			if (board[index] == ' ') {
+				freeSpace = true;
+			}
+		}
+		if (freeSpace == true) {
+			System.out.println("Free Space available for the net move");
+		} else {
+			System.out.println("Free space is not available,Board is Full");
+		}
+	}
 }
