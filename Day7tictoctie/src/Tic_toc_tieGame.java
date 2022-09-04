@@ -101,4 +101,60 @@ public class Tic_toc_tieGame {
 		return userPlay;
 
 	}
+
+	private int computerMove;
+	{
+
+		while (true) {
+			computerMove = (int) Math.floor(Math.random() * 10) % 9 + 1;
+			if (isValidMove(board, computerMove)) {
+				break;
+			}
+		}
+
+		System.out.println("Computer Choose" + computerMove);
+		PlaceMove(board, computerMove, computerLetter);
+	}
+
+	private static void winner(char[] board, char userLetter, char computerLetter) {
+
+		if ((board[0] == userLetter && board[1] == userLetter && board[2] == userLetter)
+				|| (board[3] == userLetter && board[4] == userLetter && board[5] == userLetter)
+				|| (board[6] == userLetter && board[7] == userLetter && board[8] == userLetter)
+				|| (board[0] == userLetter && board[4] == userLetter && board[8] == userLetter)
+				|| (board[2] == userLetter && board[4] == userLetter && board[6] == userLetter)) {
+			showBoard(board);
+			System.out.println("Player win the Game");
+			System.out.println();
+		} else if ((board[0] == userLetter && board[1] == userLetter && board[2] == userLetter)
+				|| (board[3] == userLetter && board[4] == userLetter && board[5] == userLetter)
+				|| (board[6] == userLetter && board[7] == userLetter && board[8] == userLetter)
+				|| (board[0] == userLetter && board[4] == userLetter && board[8] == userLetter)
+				|| (board[2] == userLetter && board[4] == userLetter && board[6] == userLetter)) {
+			showBoard(board);
+			System.out.println("computer win the Game");
+			System.out.println();
+
+		}
+
+		for (int index = 0; index < board.length; index++) {
+			if (board[index] == ' ') {
+
+			}
+
+			showBoard(board);
+			System.out.println("The Game Ended in a tie");
+
+		}
+
+	}
+
+	private void PlaceMove(char[] board, int computerMove, char computerLetter) {
+
+	}
+
+	private boolean isValidMove(char[] board, int computerMove) {
+
+		return false;
+	}
 }
