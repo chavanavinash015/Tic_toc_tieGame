@@ -85,4 +85,20 @@ public class Tic_toc_tieGame {
 			System.out.println("Free space is not available,Board is Full");
 		}
 	}
+
+	private static boolean checkfirstplayer() {
+		int Head = 0;
+		boolean userPlay;
+		Scanner scanner = new Scanner(System.in);
+		double RandomNum = Math.floor(Math.random() * 10) % 2;
+		if (RandomNum == Head) {
+			System.out.println("Comp[uter staer to play first");
+			userPlay = false;
+		} else {
+			System.out.println("user starts to play first");
+			userPlay = true;
+		}
+		return userPlay;
+
+	}
 }
